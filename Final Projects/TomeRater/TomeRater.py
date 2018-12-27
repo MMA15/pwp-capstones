@@ -133,6 +133,7 @@ class TomeRater(object):
             for book in self.books:
                 if (added_book != book) and (added_book.get_isbn() == book.get_isbn()):
                     removed_book = self.books.pop(added_book)
+                    removed_book_from_user = self.users[email].books.pop(added_book)
                     print("The isbn " + str(book.get_isbn()) + " exists somewhere else. Please confirm")
                     break
 
